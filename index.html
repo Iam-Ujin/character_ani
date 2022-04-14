@@ -7,6 +7,15 @@
     <title>savage rabbit</title>
     <style>
       /* animation */
+      @keyframes planet {
+        from {
+          transform: translateX(100%);
+        }
+        to {
+          transform: translateX(0%);
+        }
+      }
+
       @keyframes zoom {
         0% {
           transform: scale(1);
@@ -231,13 +240,96 @@
         background-size: cover;
       }
 
+      .background {
+        animation: planet 5s infinite ease-in-out alternate;
+      }
+
+      .background .planet {
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0.6;
+        box-shadow: inset -10px -10px 15px rgba(0, 0, 0, 0.8);
+      }
+
+      .background .planet.one {
+        left: -300px;
+        top: 80px;
+        background: palevioletred;
+        width: 130px;
+        height: 130px;
+      }
+
+      .background .planet.two {
+        left: 0px;
+        top: 120px;
+        background: teal;
+        width: 100px;
+        height: 100px;
+      }
+
+      .background .planet.three {
+        left: -450px;
+        top: 400px;
+        background: lightsalmon;
+        width: 50px;
+        height: 50px;
+      }
+
+      .background .planet.four {
+        left: -600px;
+        top: 200px;
+        background: lightskyblue;
+        width: 80px;
+        height: 80px;
+      }
+
+      .background .planet.five {
+        left: 600px;
+        top: 300px;
+        background: olivedrab;
+        width: 70px;
+        height: 70px;
+      }
+
+      .background .planet.six {
+        left: 800px;
+        top: 150px;
+        background: lightgoldenrodyellow;
+        width: 100px;
+        height: 100px;
+      }
+
+      .background .planet.seven {
+        left: 200px;
+        top: 400px;
+        background: sandybrown;
+        width: 50px;
+        height: 50px;
+      }
+
+      .background .planet.eight {
+        left: -350px;
+        top: 500px;
+        background: yellow;
+        width: 70px;
+        height: 70px;
+      }
+
+      .background .planet.nine {
+        left: 700px;
+        top: 550px;
+        background: lightpink;
+        width: 20px;
+        height: 20px;
+      }
+
       .rabbit {
         position: relative;
         top: 50px;
         margin: 0 auto;
         width: 400px;
         height: 500px;
-        animation: zoom 5s infinite;
+        animation: zoom 5s infinite alternate;
       }
 
       .rabbit .beard.left.top {
@@ -291,7 +383,7 @@
         background: var(--pri);
         box-shadow: 0 0 3px 3px var(--pri);
         z-index: 10;
-        animation: heart-beat 5s infinite;
+        animation: heart-beat 5s infinite alternate;
       }
 
       .rabbit .cheek.left.first {
@@ -329,13 +421,13 @@
       .rabbit .ear.left {
         left: 55px;
         border-radius: 50% 50% 0 0;
-        animation: ear-left 5s infinite;
+        animation: ear-left 5s infinite alternate;
       }
 
       .rabbit .ear.right {
         right: 100px;
         border-radius: 50% 50% 0 0;
-        animation: ear-right 5s infinite;
+        animation: ear-right 5s infinite alternate;
       }
 
       .rabbit .ear-inner.left {
@@ -472,7 +564,7 @@
         border-radius: 50%;
         background: #000;
         z-index: 3;
-        animation: erase-eye 5s infinite;
+        animation: erase-eye 5s infinite alternate;
       }
 
       .rabbit .eye.left {
@@ -489,7 +581,7 @@
         left: 8px;
         width: 20px;
         height: 30px;
-        animation: eye-light-1 5s infinite;
+        animation: eye-light-1 5s infinite alternate;
       }
 
       .eye-light.two.left {
@@ -498,7 +590,7 @@
         left: 32px;
         width: 13px;
         height: 13px;
-        animation: eye-light-2 5s infinite;
+        animation: eye-light-2 5s infinite alternate;
       }
 
       .eye-light.three.left {
@@ -507,7 +599,7 @@
         left: 28px;
         width: 7px;
         height: 7px;
-        animation: eye-light-2 5s infinite;
+        animation: eye-light-2 5s infinite alternate;
       }
 
       .rabbit .eye-light {
@@ -521,7 +613,7 @@
         left: 8px;
         width: 20px;
         height: 30px;
-        animation: eye-light-1 5s infinite;
+        animation: eye-light-1 5s infinite alternate;
       }
 
       .eye-light.two.right {
@@ -530,7 +622,7 @@
         left: 32px;
         width: 13px;
         height: 13px;
-        animation: eye-light-2 5s infinite;
+        animation: eye-light-2 5s infinite alternate;
       }
 
       .eye-light.three.right {
@@ -539,7 +631,7 @@
         left: 28px;
         width: 7px;
         height: 7px;
-        animation: eye-light-2 5s infinite;
+        animation: eye-light-2 5s infinite alternate;
       }
 
       .rabbit .nose {
@@ -606,7 +698,7 @@
         border-radius: 50%;
         background: #fff;
         z-index: 2;
-        animation: lip 5s infinite;
+        animation: lip 5s infinite alternate;
       }
 
       .rabbit .teeth {
@@ -622,7 +714,7 @@
       }
 
       .top-down {
-        animation: sunglass 5s infinite;
+        animation: sunglass 5s infinite alternate;
       }
 
       .rabbit .sunglass.left {
@@ -694,6 +786,17 @@
   </head>
 
   <body>
+    <div class="background">
+      <div class="planet one"></div>
+      <div class="planet two"></div>
+      <div class="planet three"></div>
+      <div class="planet four"></div>
+      <div class="planet five"></div>
+      <div class="planet six"></div>
+      <div class="planet seven"></div>
+      <div class="planet eight"></div>
+      <div class="planet nine"></div>
+    </div>
     <div class="rabbit">
       <div class="ear left">
         <div class="ear-inner left"></div>
