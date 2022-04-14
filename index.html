@@ -6,8 +6,205 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>savage rabbit</title>
     <style>
-      /* animaion
-      눈썹 볼터치 귀 선글라스 입술 */
+      /* animation */
+      @keyframes zoom {
+        0% {
+          transform: scale(1);
+        }
+        70% {
+          transform: scale(1.15);
+        }
+        100% {
+          transform: scale(1.15);
+        }
+      }
+
+      @keyframes sunglass {
+        0% {
+          transform: translateY(-600px);
+          z-index: 10;
+        }
+        50% {
+          transform: translateY(-600px);
+        }
+        75% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes erase-eye {
+        66% {
+          opacity: 1;
+        }
+        67% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+
+      @keyframes eye-light-1 {
+        10% {
+          transform: translateY(-1px) translateX(-1px) scale(1.1) rotate(25deg);
+        }
+        20% {
+          transform: translateY(1px) translateX(1px) scale(1) rotate(30deg);
+        }
+        30% {
+          transform: translateY(-1px) translateX(-1px) scale(1.1) rotate(25deg);
+        }
+        40% {
+          transform: translateY(1px) translateX(1px) scale(1) rotate(30deg);
+        }
+        50% {
+          transform: translateY(-1px) translateX(-1px) scale(1.1) rotate(25deg);
+        }
+        60% {
+          transform: translateY(1px) translateX(1px) scale(1) rotate(30deg);
+        }
+        70% {
+          transform: translateY(-1px) translateX(-1px) scale(1.1) rotate(25deg);
+        }
+      }
+
+      @keyframes eye-light-2 {
+        10% {
+          transform: translateY(1px) translateX(1px) scale(1);
+        }
+        20% {
+          transform: translateY(-1px) translateX(-1px) scale(1.1);
+        }
+        30% {
+          transform: translateY(1px) translateX(1px) scale(1);
+        }
+        40% {
+          transform: translateY(-1px) translateX(-1px) scale(1.1);
+        }
+        50% {
+          transform: translateY(1px) translateX(1px) scale(1);
+        }
+        60% {
+          transform: translateY(-1px) translateX(-1px) scale(1.1);
+        }
+        70% {
+          transform: translateY(-1px) translateX(-1px) scale(1);
+        }
+      }
+
+      @keyframes lip {
+        66% {
+          transform: none;
+        }
+        67% {
+          transform: scaleX(0.9);
+        }
+        100% {
+          transform: scaleX(0.7);
+        }
+      }
+
+      @keyframes ear-left {
+        0% {
+          transform: rotate(-20deg);
+        }
+        5% {
+          transform: rotate(-25deg) translate(-5px);
+        }
+        10% {
+          transform: rotate(-20deg);
+        }
+        15% {
+          transform: rotate(-25deg) translate(-5px);
+        }
+        40% {
+          transform: rotate(-20deg);
+        }
+        45% {
+          transform: rotate(-25deg) translate(-5px);
+        }
+        50% {
+          transform: rotate(-20deg);
+        }
+        55% {
+          transform: rotate(-25deg) translate(-5px);
+        }
+        60% {
+          transform: rotate(-20deg);
+        }
+        100% {
+          transform: rotate(-20deg);
+        }
+      }
+
+      @keyframes ear-right {
+        0% {
+          transform: rotate(20deg);
+        }
+        5% {
+          transform: rotate(25deg) translate(5px);
+        }
+        10% {
+          transform: rotate(20deg);
+        }
+        15% {
+          transform: rotate(25deg) translate(5px);
+        }
+        40% {
+          transform: rotate(20deg);
+        }
+        45% {
+          transform: rotate(25deg) translate(5px);
+        }
+        50% {
+          transform: rotate(20deg);
+        }
+        55% {
+          transform: rotate(25deg) translate(5px);
+        }
+        60% {
+          transform: rotate(20deg);
+        }
+        100% {
+          transform: rotate(20deg);
+        }
+      }
+
+      @keyframes heart-beat {
+        0% {
+          transform: scale(1);
+        }
+        5% {
+          transform: scale(1.1);
+        }
+        10% {
+          transform: scale(1);
+        }
+        15% {
+          transform: scale(1.1);
+        }
+        40% {
+          transform: scale(1);
+        }
+        45% {
+          transform: scale(1.1);
+        }
+        50% {
+          transform: scale(1);
+        }
+        55% {
+          transform: scale(1.1);
+        }
+        60% {
+          transform: scale(1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
 
       /* setting */
       :root {
@@ -40,6 +237,7 @@
         margin: 0 auto;
         width: 400px;
         height: 500px;
+        animation: zoom 5s infinite;
       }
 
       .rabbit .beard.left.top {
@@ -93,7 +291,9 @@
         background: var(--pri);
         box-shadow: 0 0 3px 3px var(--pri);
         z-index: 10;
+        animation: heart-beat 5s infinite;
       }
+
       .rabbit .cheek.left.first {
         top: 230px;
         left: 50px;
@@ -128,14 +328,14 @@
 
       .rabbit .ear.left {
         left: 55px;
-        transform: rotate(-20deg);
         border-radius: 50% 50% 0 0;
+        animation: ear-left 5s infinite;
       }
 
       .rabbit .ear.right {
         right: 100px;
-        transform: rotate(20deg);
         border-radius: 50% 50% 0 0;
+        animation: ear-right 5s infinite;
       }
 
       .rabbit .ear-inner.left {
@@ -272,6 +472,7 @@
         border-radius: 50%;
         background: #000;
         z-index: 3;
+        animation: erase-eye 5s infinite;
       }
 
       .rabbit .eye.left {
@@ -288,7 +489,7 @@
         left: 8px;
         width: 20px;
         height: 30px;
-        transform: rotate(30deg);
+        animation: eye-light-1 5s infinite;
       }
 
       .eye-light.two.left {
@@ -297,6 +498,7 @@
         left: 32px;
         width: 13px;
         height: 13px;
+        animation: eye-light-2 5s infinite;
       }
 
       .eye-light.three.left {
@@ -305,6 +507,7 @@
         left: 28px;
         width: 7px;
         height: 7px;
+        animation: eye-light-2 5s infinite;
       }
 
       .rabbit .eye-light {
@@ -318,7 +521,7 @@
         left: 8px;
         width: 20px;
         height: 30px;
-        transform: rotate(30deg);
+        animation: eye-light-1 5s infinite;
       }
 
       .eye-light.two.right {
@@ -327,6 +530,7 @@
         left: 32px;
         width: 13px;
         height: 13px;
+        animation: eye-light-2 5s infinite;
       }
 
       .eye-light.three.right {
@@ -335,6 +539,7 @@
         left: 28px;
         width: 7px;
         height: 7px;
+        animation: eye-light-2 5s infinite;
       }
 
       .rabbit .nose {
@@ -355,7 +560,7 @@
         width: 73px;
         height: 68px;
         border-radius: 50%;
-        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 6px 6px rgba(0, 0, 0, 0.8);
       }
 
       .rabbit .mouth.left {
@@ -401,6 +606,7 @@
         border-radius: 50%;
         background: #fff;
         z-index: 2;
+        animation: lip 5s infinite;
       }
 
       .rabbit .teeth {
@@ -413,6 +619,10 @@
         z-index: 0;
         background: #fff;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      }
+
+      .top-down {
+        animation: sunglass 5s infinite;
       }
 
       .rabbit .sunglass.left {
@@ -507,6 +717,7 @@
         <div class="cheek second left"></div>
         <div class="cheek first right"></div>
         <div class="cheek second right"></div>
+
         <div class="brow left"></div>
         <div class="brow right"></div>
         <div class="eye left">
@@ -523,9 +734,11 @@
         <div class="mouth left"></div>
         <div class="mouth right"></div>
         <div class="teeth"></div>
-        <div class="sunglass left"></div>
-        <div class="sunglass right"></div>
-        <div class="sunglass line"></div>
+        <div class="top-down">
+          <div class="sunglass left"></div>
+          <div class="sunglass right"></div>
+          <div class="sunglass line"></div>
+        </div>
       </div>
     </div>
   </body>
