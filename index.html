@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>savage rabbit</title>
+    <style>
+      /* animaion
+      눈썹 볼터치 귀 선글라스 입술 */
+
+      /* setting */
+      :root {
+        --pri: lightpink;
+        --sec: #acacac;
+      }
+
+      /* reset */
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      /* layout */
+      /* design */
+      *,
+      *:after,
+      *:before {
+        box-sizing: border-box;
+      }
+
+      body {
+        background-image: url(./img/space_bg.jpg);
+        background-size: cover;
+      }
+
+      .rabbit {
+        position: relative;
+        top: 50px;
+        margin: 0 auto;
+        width: 400px;
+        height: 500px;
+      }
+
+      .rabbit .beard.left.top {
+        position: absolute;
+        top: 250px;
+        left: -5px;
+        width: 100px;
+        height: 5px;
+        background-color: #777;
+        border-radius: 83% 17% 81% 19% / 84% 8% 92% 16%;
+        transform: rotate(10deg);
+      }
+
+      .rabbit .beard.left.bottom {
+        position: absolute;
+        top: 270px;
+        left: 0px;
+        width: 100px;
+        height: 5px;
+        background-color: #777;
+        border-radius: 83% 17% 81% 19% / 84% 8% 92% 16%;
+        transform: rotate(-20deg);
+      }
+
+      .rabbit .beard.right.top {
+        position: absolute;
+        top: 250px;
+        right: -5px;
+        width: 100px;
+        height: 5px;
+        background-color: #777;
+        border-radius: 83% 17% 81% 19% / 84% 8% 92% 16%;
+        transform: rotate(-10deg);
+      }
+
+      .rabbit .beard.right.bottom {
+        position: absolute;
+        top: 270px;
+        right: 0px;
+        width: 100px;
+        height: 5px;
+        background-color: #777;
+        border-radius: 83% 17% 81% 19% / 84% 8% 92% 16%;
+        transform: rotate(20deg);
+      }
+
+      .rabbit .cheek {
+        position: absolute;
+        width: 40px;
+        height: 60px;
+        background: var(--pri);
+        box-shadow: 0 0 3px 3px var(--pri);
+        z-index: 10;
+      }
+      .rabbit .cheek.left.first {
+        top: 230px;
+        left: 50px;
+        border-radius: 52% 48% 0% 100% / 39% 39% 61% 61%;
+      }
+
+      .rabbit .cheek.left.second {
+        top: 230px;
+        left: 90px;
+        border-radius: 52% 48% 100% 0% / 39% 39% 61% 61%;
+      }
+
+      .rabbit .cheek.right.first {
+        top: 230px;
+        right: 90px;
+        border-radius: 52% 48% 0% 100% / 39% 39% 61% 61%;
+      }
+
+      .rabbit .cheek.right.second {
+        top: 230px;
+        right: 50px;
+        border-radius: 52% 48% 100% 0% / 39% 39% 61% 61%;
+      }
+
+      .rabbit .ear {
+        position: absolute;
+        width: 70px;
+        height: 220px;
+        background: var(--sec);
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+      }
+
+      .rabbit .ear.left {
+        left: 55px;
+        transform: rotate(-20deg);
+        border-radius: 50% 50% 0 0;
+      }
+
+      .rabbit .ear.right {
+        right: 100px;
+        transform: rotate(20deg);
+        border-radius: 50% 50% 0 0;
+      }
+
+      .rabbit .ear-inner.left {
+        position: absolute;
+        top: 80px;
+        left: -45px;
+        width: 150px;
+        height: 30px;
+        background-color: var(--pri);
+        border-radius: 30%;
+        transform: rotate(90deg);
+        border-radius: 40% 0 0 40%;
+        box-shadow: inset -5px 5px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .rabbit .ear-inner.right {
+        position: absolute;
+        top: 80px;
+        right: -45px;
+        width: 150px;
+        height: 30px;
+        background-color: var(--pri);
+        border-radius: 30%;
+        transform: rotate(90deg);
+        border-radius: 40% 0 0 40%;
+        box-shadow: inset -5px -5px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .rabbit .face {
+        position: absolute;
+        bottom: 0;
+        width: 350px;
+        height: 350px;
+        border-radius: 50%;
+        background: #fff;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      }
+
+      .rabbit .pattern-guide {
+        position: absolute;
+        bottom: 0;
+        width: 350px;
+        height: 350px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+
+      .rabbit .pattern.left {
+        position: absolute;
+        top: -300px;
+        left: -100px;
+        width: 300px;
+        height: 500px;
+        border-radius: 50%;
+        background-color: var(--sec);
+        box-shadow: 0 0 5px 5px var(--sec);
+      }
+
+      .rabbit .pattern.right {
+        position: absolute;
+        top: -300px;
+        right: -100px;
+        width: 300px;
+        height: 500px;
+        border-radius: 50%;
+        background-color: var(--sec);
+        box-shadow: 0 0 5px 5px var(--sec);
+      }
+
+      .rabbit .chubby {
+        position: absolute;
+        top: 210px;
+        width: 150px;
+        height: 130px;
+        border-radius: 50%;
+        background-color: #fff;
+        box-shadow: 0 0 4px #fff;
+      }
+
+      .rabbit .chubby.left {
+        left: -20px;
+      }
+
+      .rabbit .chubby.right {
+        right: -20px;
+      }
+
+      .rabbit .brow {
+        position: absolute;
+        top: 80px;
+        width: 100px;
+        height: 100px;
+        background-color: #777;
+        border-radius: 50%;
+      }
+
+      .rabbit .brow.left {
+        left: 30px;
+      }
+
+      .rabbit .brow.right {
+        right: 30px;
+      }
+
+      .rabbit .brow.left::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: -5px;
+        left: -10px;
+        width: 110px;
+        height: 100px;
+        background-color: var(--sec);
+        border-radius: 50%;
+      }
+
+      .rabbit .brow.right::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: -5px;
+        right: -10px;
+        width: 110px;
+        height: 100px;
+        background-color: var(--sec);
+        border-radius: 50%;
+      }
+
+      .rabbit .eye {
+        position: absolute;
+        top: 180px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: #000;
+        z-index: 3;
+      }
+
+      .rabbit .eye.left {
+        left: 100px;
+      }
+
+      .rabbit .eye.right {
+        right: 100px;
+      }
+
+      .eye-light.one.left {
+        position: absolute;
+        top: 6px;
+        left: 8px;
+        width: 20px;
+        height: 30px;
+        transform: rotate(30deg);
+      }
+
+      .eye-light.two.left {
+        position: absolute;
+        top: 18px;
+        left: 32px;
+        width: 13px;
+        height: 13px;
+      }
+
+      .eye-light.three.left {
+        position: absolute;
+        top: 36px;
+        left: 28px;
+        width: 7px;
+        height: 7px;
+      }
+
+      .rabbit .eye-light {
+        background-color: #fff;
+        border-radius: 50%;
+      }
+
+      .eye-light.one.right {
+        position: absolute;
+        top: 6px;
+        left: 8px;
+        width: 20px;
+        height: 30px;
+        transform: rotate(30deg);
+      }
+
+      .eye-light.two.right {
+        position: absolute;
+        top: 18px;
+        left: 32px;
+        width: 13px;
+        height: 13px;
+      }
+
+      .eye-light.three.right {
+        position: absolute;
+        top: 36px;
+        left: 28px;
+        width: 7px;
+        height: 7px;
+      }
+
+      .rabbit .nose {
+        position: absolute;
+        top: 270px;
+        left: 50%;
+        margin-left: -16px;
+        width: 35px;
+        height: 25px;
+        border-radius: 50% 50% 50% 50%;
+        background: coral;
+        z-index: 2;
+      }
+
+      .rabbit .mouth {
+        position: absolute;
+        top: 250px;
+        width: 73px;
+        height: 68px;
+        border-radius: 50%;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .rabbit .mouth.left {
+        left: 103px;
+        background-color: #fff;
+        z-index: 1;
+      }
+
+      .rabbit .mouth.right {
+        right: 103px;
+        background-color: #fff;
+        z-index: 1;
+      }
+
+      .rabbit .mouth.right:before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: -20px;
+        width: 50px;
+        height: 50px;
+        background: #fff;
+        z-index: 3;
+      }
+
+      .rabbit .mouth.left::after {
+        content: "";
+        position: absolute;
+        left: -15px;
+        width: 90px;
+        height: 68px;
+        border-radius: 50%;
+        background: #fff;
+        z-index: 2;
+      }
+
+      .rabbit .mouth.right::after {
+        content: "";
+        position: absolute;
+        right: -15px;
+        width: 90px;
+        height: 68px;
+        border-radius: 50%;
+        background: #fff;
+        z-index: 2;
+      }
+
+      .rabbit .teeth {
+        position: absolute;
+        width: 50px;
+        height: 60px;
+        border-radius: 5px;
+        top: 270px;
+        left: 152px;
+        z-index: 0;
+        background: #fff;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      }
+
+      .rabbit .sunglass.left {
+        position: absolute;
+        top: 110px;
+        left: 40px;
+        width: 110px;
+        height: 160px;
+        background-color: #000;
+        border-radius: 77% 23% 56% 44% / 29% 82% 18% 71%;
+        transform: rotate(-70deg);
+        z-index: 5;
+      }
+
+      .rabbit .sunglass.right {
+        position: absolute;
+        top: 110px;
+        right: 40px;
+        width: 110px;
+        height: 160px;
+        background-color: #000;
+        border-radius: 77% 23% 56% 44% / 29% 82% 18% 71%;
+        transform: rotate(70deg) scaleX(-1);
+        z-index: 5;
+      }
+
+      .rabbit .sunglass.line {
+        position: absolute;
+        top: 150px;
+        right: -10px;
+        width: 50px;
+        height: 20px;
+        background-color: #000;
+        border-radius: 40%;
+        transform: rotate(-30deg);
+        z-index: 5;
+      }
+
+      .rabbit .sunglass.left::after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 60px;
+        right: -50px;
+        width: 50px;
+        height: 50px;
+        background-color: #777;
+        border-radius: 89% 11% 86% 14% / 100% 0% 100% 0%;
+        transform: rotate(-25deg);
+        z-index: 5;
+      }
+
+      .rabbit .sunglass.right::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50px;
+        right: -50px;
+        width: 50px;
+        height: 50px;
+        background-color: #777;
+        border-radius: 89% 11% 86% 14% / 100% 0% 100% 0%;
+        transform: rotate(-25deg);
+        z-index: 5;
+      }
+
+      /* media query */
+    </style>
+  </head>
+
+  <body>
+    <div class="rabbit">
+      <div class="ear left">
+        <div class="ear-inner left"></div>
+      </div>
+      <div class="ear right">
+        <div class="ear-inner right"></div>
+      </div>
+
+      <div class="face">
+        <div class="pattern-guide">
+          <div class="pattern left"></div>
+          <div class="pattern right"></div>
+        </div>
+        <div class="chubby left"></div>
+        <div class="chubby right"></div>
+        <div class="beard left top"></div>
+        <div class="beard left bottom"></div>
+        <div class="beard right top"></div>
+        <div class="beard right bottom"></div>
+        <div class="cheek first left"></div>
+        <div class="cheek second left"></div>
+        <div class="cheek first right"></div>
+        <div class="cheek second right"></div>
+        <div class="brow left"></div>
+        <div class="brow right"></div>
+        <div class="eye left">
+          <div class="eye-light one left"></div>
+          <div class="eye-light two left"></div>
+          <div class="eye-light three left"></div>
+        </div>
+        <div class="eye right">
+          <div class="eye-light one right"></div>
+          <div class="eye-light two right"></div>
+          <div class="eye-light three right"></div>
+        </div>
+        <div class="nose"></div>
+        <div class="mouth left"></div>
+        <div class="mouth right"></div>
+        <div class="teeth"></div>
+        <div class="sunglass left"></div>
+        <div class="sunglass right"></div>
+        <div class="sunglass line"></div>
+      </div>
+    </div>
+  </body>
+</html>
